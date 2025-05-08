@@ -1,13 +1,9 @@
 body {
-    background-color: var(--gris-foncer);
+    background-color: var(--noir);
     font-family: "Oxygen", Arial, sans-serif; 
-  }
-
-  
-  P{
     color: var(--white);
   }
-  
+
   :root {
     --noir: #000000;
     --gris-foncer: #555555;
@@ -27,6 +23,8 @@ body {
   
   h1, h2 {
     font-family: "Big_Shoulders", sans-serif; 
+    transform:translate(25%);
+    
   }
   
   
