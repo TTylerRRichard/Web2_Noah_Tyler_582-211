@@ -1,0 +1,21 @@
+:root {
+    --noir: #000000;
+    --gris-foncer: #555555;
+    --white: #ffffff;
+    --gris-pale:#A2A2A2;
+  }
+
+  body {
+    background-color:var(--noir);
+  }
+
+  @font-face {
+    src: url("assets/polices/Big_Shoulders") format("ttf");
+    font-family: "Big_Shoulders";
+  }
+  @font-face {
+    src: url("assets/polices/Oxygen") format("ttf");
+    font-family: "Oxygen";
+  }
+
+  
