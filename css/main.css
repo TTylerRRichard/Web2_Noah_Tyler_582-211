@@ -15,6 +15,7 @@
 
 }
 
+
 .header img {
   height: 90px;
 }
@@ -77,6 +78,17 @@ color: var(--white);
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+@font-face {
+  font-family: "Big_Shoulders";
+  src: url("assets/polices/Big_Shoulders.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Oxygen";
+  src: url("assets/polices/Oxygen.ttf") format("ttf");
+}
+
+
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -88,6 +100,7 @@ color: var(--white);
     width: 200px;
     border: 1px solid var(--white);
     border-radius: 5px;
+    box-sizing: border-box;
   }
 
   .nav-links.show {
