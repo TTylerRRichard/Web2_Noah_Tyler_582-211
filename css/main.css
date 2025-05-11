@@ -89,45 +89,46 @@ color: var(--white);
 }
 
 
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    background-color: var(--gris-foncer);
-    width: 200px;
-    border: 1px solid var(--white);
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
 
-  .nav-links.show {
-    display: flex;
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none; /* Hide the nav-links initially */
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      background-color: var(--gris-foncer);
+      width: 200px;
+      border: 1px solid var(--white);
+      border-radius: 5px;
+      box-sizing: border-box;
+      padding: 10px 0;
+      gap: 10px;
+    }
+  
+    .nav-links.show {
+      display: flex; /* Show the nav-links when the class is added */
+    }
+  
+    .burger-menu {
+      display: flex;
+    }
   }
+  
 
   .burger-menu {
     display: flex;
   }
-}
+
 .header{
   color: var(--gris-foncer);
 font-family: "Oxygen", Arial, sans-serif; 
 }
 
 
-@font-face {
-  font-family: "Big_Shoulders";
-  src: url("assets/polices/Big_Shoulders.ttf") format("ttf");
-}
 
-@font-face {
-  font-family: "Oxygen";
-  src: url("assets/polices/Oxygen.ttf") format("ttf");
+@media (min-width: 769px) {
+  .burger-menu {
+    display: none; 
+  }
 }
-
-h1, h2 {
-  font-family: "Big_Shoulders", sans-serif; 
-}
-
