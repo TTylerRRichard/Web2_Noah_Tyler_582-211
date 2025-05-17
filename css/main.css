@@ -6,12 +6,12 @@
 }
 @font-face {
   font-family: "Big_Shoulders";
-  src: url("assets/polices/Big_Shoulders.ttf") format("truetype");
+  src: url("./assets/polices/Big_Shoulders.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Oxygen";
-  src: url("assets/polices/Oxygen.ttf") format("truetype");
+  src: url("./assets/polices/Oxygen.ttf") format("truetype");
 }
 
 * {
@@ -19,20 +19,21 @@
 }
 
 body {
+  
   background-color: var(--noir);
-  font-family: "Oxygen", Arial, sans-serif;
+  font-family: "Oxygen";
   color: var(--white);
   overflow-x: hidden;
 }
 
 h1 {
-  font-family: "Big_Shoulders", sans-serif;
+  font-family: "Big_Shoulders";
   transform: translate(15%);
   font-size: 2.7rem;
 }
 
 h2 {
-  font-family: "Big_Shoulders", sans-serif;
+  font-family: "Big_Shoulders";
   font-size: 2rem;
   transform: translate(3%, 57%);
 }
