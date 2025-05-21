@@ -1,3 +1,4 @@
+/* variables de couleurs utilisé pour toutes mes pages*/
 :root {
   --noir: #000000;
   --gris-foncer: #555555;
@@ -5,6 +6,7 @@
   --gris-pale: #A2A2A2;
 }
 
+/* Section d'importation de police: Big shoulder et Oxygen*/
 @font-face {
   font-family: "Big_Shoulders";
   src: url("./assets/polices/Big_Shoulders.ttf") format("truetype");
@@ -19,6 +21,7 @@
   box-sizing: border-box;
 }
 
+/* style de base du body*/
 body {
 
   background-color: var(--noir);
@@ -55,10 +58,12 @@ ul {
 
 li {
   transform: translate(15%);
+  /* Pour le positionnement*/
   margin: 10px 0;
   width: 100%;
 }
 
+/* styles pour mes buttons*/
 .buttons a {
   text-decoration: none;
   color: var(--white);
@@ -66,15 +71,17 @@ li {
   border: 1px solid white;
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
+  /*transition*/
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   max-width: 300px;
+  /* Définit la largeur maximum du boutton*/
   width: 90%;
 }
 
-
+/*styles pour l'en-tête*/
 .header {
   display: flex;
   align-items: center;
@@ -84,7 +91,7 @@ li {
 
 }
 
-
+/* Section style pour le menu hamburger*/
 .burger-menu {
   display: none;
   flex-direction: column;
@@ -109,17 +116,23 @@ li {
 
 
 
-
+/* Medias Queries Section mobile*/
 @media (max-width: 768px) {
+
+  /* Style pour mes nav links*/
   .nav-links {
     display: none;
+    /* Pour que c'a soit pas visible pour uq'on voit que le menu hamburger en version mobile*/
     flex-direction: column;
+    /* Pour le positionnement*/
     position: absolute;
     top: 70px;
     right: 20px;
     background-color: var(--gris-foncer);
+    /* Utilisation d'une de mes variables de couleur*/
     width: 220px;
     border: 1px solid var(--white);
+    /* Utilisation d'une de mes variables de couleur*/
     border-radius: 5px;
     box-sizing: border-box;
     padding: 10px 0;
@@ -127,23 +140,26 @@ li {
     z-index: 1000;
   }
 
-
+  /* styles pour buttons*/
   .buttons {
     display: flex;
     flex-direction: column;
+    /* Pour le positionnement soit en colonne*/
     justify-content: center;
     align-items: center;
     gap: 20px;
     position: relative;
     z-index: 9999;
+    /* Pour que les bouttons soient en avant du text. Sinon, les bouttons seraient en arrière */
   }
 
+  /* style hover */
   .buttons a:hover {
     background-color: white;
     color: #333;
   }
 
-
+  /* style nav links*/
   .nav-links a {
     text-decoration: none;
     color: var(--white);
@@ -153,15 +169,14 @@ li {
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
+  /* style pour lorsqu'on hover sur les nav links*/
   .nav-links a:hover {
     background-color: white;
     color: #333;
   }
 
-  .Lcircle {
-    display: none;
-  }
-
+  /* Pour qu'on ne voit pas les cercles lorsqu'on est en version mobile*/
+  .Lcircle,
   .Rcircle {
     display: none;
   }
@@ -174,17 +189,19 @@ li {
     display: flex;
   }
 
+  /* Pour qu'on ne voit pas la vidéo lorsqu'on est en version mobile*/
   video {
     display: none;
   }
 
-
+  /* style header mobile*/
   .header {
     color: var(--gris-foncer);
     font-family: "Oxygen", Arial, sans-serif;
 
   }
 
+  /* Section footer*/
   .footer {
     display: flex;
     justify-content: center;
@@ -196,6 +213,7 @@ li {
     color: #ffffff;
   }
 
+  /* style du container dans le footer*/
   .footer-container {
     display: flex;
     flex-direction: column;
@@ -218,11 +236,13 @@ li {
     display: inline-flex;
   }
 
+  /* definit la taille des icons dans le footer*/
   .footer-socials img {
     width: 24px;
     height: 24px;
   }
 
+  /* L'animation de mon logo. */
   @keyframes scale-steps {
     0% {
       transform: scale(1);
@@ -245,6 +265,7 @@ li {
     }
   }
 
+  /* Style de mon logo ainsi que le "linkage de mon animation"*/
   .logo {
     animation: scale-steps 3s infinite ease-in-out;
     display: block;
@@ -256,9 +277,10 @@ li {
 }
 
 
-
+/* Styles Medias queries section version desktop*/
 @media (min-width: 769px) {
 
+  /* Voici mon animation pour logo mais version desktop*/
   @keyframes scale-steps {
     0% {
       transform: scale(1);
@@ -281,6 +303,7 @@ li {
     }
   }
 
+  /* Style de mon logo ainsi que le "linkage de mon animation*/
   .logo {
     animation: scale-steps 3s infinite ease-in-out;
     display: block;
@@ -291,11 +314,12 @@ li {
   }
 
 
-
+  /* Pour que lorsqu'on arrive sur format desktop, le menu burger disparait*/
   .burger-menu {
     display: none;
   }
 
+  /* Style que j'ai donner a mon container*/
   .container {
     max-width: 850px;
     margin: -1150px auto;
@@ -307,17 +331,20 @@ li {
 
   }
 
+  /* Style que j'ai donné a mon h1 dans le container*/
   .container h1 {
     font-size: 2rem;
     margin-bottom: 20px;
 
   }
 
+  /* Style que j'ai donné a mes paragraphe dans le container*/
   .container p {
     font-size: 1rem;
     line-height: 1.6;
   }
 
+  /* L'animation de l'image de cercle gauche*/
   @keyframes slide-left-circle {
 
     0%,
@@ -330,6 +357,7 @@ li {
     }
   }
 
+  /* L'animation de l'image de cercle droite*/
   @keyframes slide-right-circle {
 
     0%,
@@ -344,22 +372,29 @@ li {
 
   .Lcircle {
     transform: translate(80%, -25%);
+    /* Positionnement initial*/
     animation: slide-left-circle 3s ease-in-out infinite;
+    /* "paramètre" de l'animation*/
   }
 
   .Rcircle {
     transform: translate(850%, -25%);
+    /* Positionnement initial*/
     animation: slide-right-circle 3s ease-in-out infinite;
+    /* "paramètre" de l'animation*/
   }
 
+  /* Style que j'ai donné a mes nav links*/
   .nav-links {
-
     flex-direction: row;
+    /* Pour que le positionnement soit en row*/
     position: absolute;
     top: 70px;
     right: 40px;
     transform: translate(-440%);
+    /* Positionnement*/
     width: 250px;
+    /* Définit la largeur*/
     padding: 10px 0;
     gap: 50px;
     z-index: 1000;
@@ -367,9 +402,12 @@ li {
 
   video {
     width: 800px;
+    /* Largeur du vidéo*/
     transform: translate(60%);
+    /* Positionnement initial*/
   }
 
+  /* styles des bouttons*/
   .buttons {
     display: flex;
     justify-content: center;
@@ -379,11 +417,13 @@ li {
     z-index: 9999;
   }
 
+  /* styles des buttons lorsqu'on survole*/
   .buttons a:hover {
     background-color: white;
     color: #333;
   }
 
+  /* styles des navlinks */
   .nav-links a {
     text-decoration: none;
     color: var(--white);
@@ -393,24 +433,29 @@ li {
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
+  /* styles des nav links lorsqu'on survole*/
   .nav-links a:hover {
     background-color: white;
     color: #333;
 
   }
 
+  /* styles que j'ai donné a mon footer. J'ai mis un display flex , justify-content et un align-items pour que les éléments dans mon footer soit placés en colonne et bien centré*/
   .footer {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background-color: var(--gris-foncer);
+    /* Couleur utilisant la variable que j'ai définis au début de mon code*/
     padding: 20px;
     text-align: center;
     color: #ffffff;
     transform: translate(0%, 500%);
+    /* Pour le positionnement*/
   }
 
+  /* styles du container j'ai mis dans mon footer*/
   .footer-container {
     display: flex;
     flex-direction: column;
@@ -418,21 +463,25 @@ li {
     gap: 20px;
   }
 
+  /* styles de l'address et contact*/
   .footer-address,
   .footer-contact {
     text-align: center;
   }
 
+  /* styles sur info*/
   .footer-socials {
     display: flex;
     justify-content: center;
     gap: 15px;
   }
 
+  /* Pour le link*/
   .footer-socials a {
     display: inline-flex;
   }
 
+  /* Ici en utilisant width et height, j'ai définis la taille des icons dans le footer*/
   .footer-socials img {
     width: 24px;
     height: 24px;
