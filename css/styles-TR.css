@@ -1,29 +1,51 @@
+/* Section d'importation de police: Oxygen*/
+@font-face {
+  font-family: "Oxygen";
+  src: url("./assets/polices/Oxygen/Oxygen-Regular.ttf") format("truetype");
+}
+
+/* variables de couleurs utilisé pour toutes mes pages*/
+:root {
+  --noir: #000000;
+  --gris-foncer: #555555;
+  --white: #ffffff;
+  --gris-pale: #A2A2A2;
+}
+
 * {
   box-sizing: border-box;
 }
 
+/* style de base du body*/
 body {
+
   background-color: var(--noir);
-  font-family: "Oxygen", Arial, sans-serif;
+  font-family: "Oxygen";
   color: var(--white);
   overflow-x: hidden;
 }
 
 h1 {
-  font-family: "Big_Shoulders", sans-serif;
+  font-family: "Big_Shoulders";
   transform: translate(15%);
   font-size: 2.7rem;
 }
 
 h2 {
-  font-family: "Big_Shoulders", sans-serif;
+  font-family: "Big_Shoulders";
   font-size: 2rem;
-  transform: translate(3%, 57%);
+  transform: translate(6%, 57%);
+}
+
+h3,
+h4 {
+  transform: translate(4%);
 }
 
 p {
-  margin: 15px 16px; 
-  line-height: 1.4; 
+  margin: 15px 16px;
+  line-height: 1.4;
+
 }
 
 ul {
@@ -37,22 +59,690 @@ ul {
 
 li {
   transform: translate(15%);
+  /* Pour le positionnement*/
   margin: 10px 0;
   width: 100%;
 }
 
-.buttons a {
-  text-decoration: none;
-  color: var(--white);
-  padding: 20px;
-  border: 1px solid white;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+
+/*styles pour l'en-tête*/
+.header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  max-width: 300px;
-  width: 90%;
+  justify-content: flex-start;
+  padding: 40px 20px;
+  background-color: #555555;
+
 }
 
+/* Section style pour le menu hamburger*/
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 50px;
+  width: 50px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.burger-menu span {
+  display: block;
+  height: 6px;
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 2px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+
+
+
+/* Medias Queries Section mobile*/
+@media (max-width: 768px) {
+
+  /* L'animation de mon logo. */
+  @keyframes scale-steps {
+    0% {
+      transform: scale(1);
+    }
+
+    25% {
+      transform: scale(1.2);
+    }
+
+    50% {
+      transform: scale(1);
+    }
+
+    75% {
+      transform: scale(1.2);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  /* Style de mon logo ainsi que le "linkage de mon animation"*/
+  .logo {
+    animation: scale-steps 3s infinite ease-in-out;
+    display: block;
+    position: relative;
+    transform-origin: center;
+    width: 150px;
+    height: auto;
+  }
+
+  /* Style pour mes nav links*/
+  .nav-links {
+    display: none;
+    /* Pour que c'a soit pas visible pour uq'on voit que le menu hamburger en version mobile*/
+
+    flex-direction: column;
+    /* Pour le positionnement*/
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: var(--gris-foncer);
+    /* Utilisation d'une de mes variables de couleur*/
+    width: 220px;
+    border: 1px solid var(--white);
+    /* Utilisation d'une de mes variables de couleur*/
+    box-sizing: border-box;
+    padding: 10px 0;
+    gap: 10px;
+    z-index: 1000;
+  }
+
+  .image,
+  .image2 {
+    transform: translate(20%, 5.5%);
+  }
+
+  .image3 {
+    transform: translate(20%, 5.5%);
+    padding-bottom: 50px;
+  }
+
+  /* styles pour buttons*/
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    /* Pour le positionnement soit en colonne*/
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    z-index: 9999;
+    /* Pour que les bouttons soient en avant du text. Sinon, les bouttons seraient en arrière */
+
+  }
+
+  /* styles pour buttons*/
+  .buttons a {
+    text-decoration: none;
+    color: var(--white);
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    max-width: 300px;
+    width: 90%;
+    transform: translate(-9%);
+  }
+
+  /* style hover */
+  .buttons a:hover {
+    background-color: white;
+    color: #333;
+  }
+
+  /* styles pour le link dans le buttons*/
+  .buttons2 a {
+    text-decoration: none;
+    color: var(--white);
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    max-width: 300px;
+    width: 90%;
+    transform: translate(20%);
+  }
+
+  /* styles hover*/
+  .buttons2 a:hover {
+    background-color: white;
+    color: #333;
+  }
+
+  /* styles pour buttons*/
+  .buttons3 a {
+    text-decoration: none;
+    color: var(--white);
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    max-width: 300px;
+    width: 90%;
+    transform: translate(20%);
+  }
+
+  /* styles pour le hover buttons*/
+  .buttons3 a:hover {
+    background-color: white;
+    color: #333;
+  }
+
+  /* styles pour buttons*/
+  .buttons4 a {
+    text-decoration: none;
+    color: var(--white);
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    max-width: 300px;
+    width: 90%;
+    transform: translate(20%);
+  }
+
+  /* styles pour le hover buttons*/
+  .buttons4 a:hover {
+    background-color: white;
+    color: #333;
+  }
+
+  /* styles pour le a des navlinks */
+  .nav-links a {
+    text-decoration: none;
+    color: var(--white);
+    padding: 10px 15px;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* styles pour le hover des nav links*/
+  .nav-links a:hover {
+    background-color: white;
+    color: #333;
+  }
+
+  /* Pour qu'on ne voit pas les cercles lorsqu'on est en version mobile*/
+  .Lcircle,
+  .Rcircle {
+    display: none;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+
+  /* Pour qu'on ne voit pas la vidéo lorsqu'on est en version mobile*/
+  video {
+    display: none;
+  }
+
+  /* style header mobile*/
+  .header {
+    color: var(--gris-foncer);
+    font-family: "Oxygen", Arial, sans-serif;
+
+  }
+
+  /* Section footer*/
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--gris-foncer);
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  /* style du container dans le footer*/
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .footer-address,
+  .footer-contact {
+    text-align: center;
+  }
+
+  .footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .footer-socials a {
+    display: inline-flex;
+  }
+
+  /* definit la taille des icons dans le footer*/
+  .footer-socials img {
+    width: 24px;
+    height: 24px;
+  }
+
+
+}
+
+/* Styles Medias queries section version desktop*/
+@media (min-width: 769px) {
+
+
+  /* Pour que lorsqu'on arrive sur format desktop, le menu burger disparait*/
+  .burger-menu {
+    display: none;
+  }
+
+  /* Voici mon animation pour logo mais version desktop*/
+  @keyframes scale-steps {
+    0% {
+      transform: scale(1);
+    }
+
+    25% {
+      transform: scale(1.2);
+    }
+
+    50% {
+      transform: scale(1);
+    }
+
+    75% {
+      transform: scale(1.2);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  /* Style de mon logo ainsi que le "linkage de mon animation*/
+  .logo {
+    animation: scale-steps 3s infinite ease-in-out;
+    display: block;
+    position: relative;
+    transform-origin: center;
+    width: 150px;
+    height: auto;
+  }
+
+
+
+  /* Style que j'ai donner a mon container*/
+  .container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: var(--noir);
+    color: var(--white);
+    font-family: "Oxygen";
+    position: relative;
+    height: auto;
+
+  }
+
+  /* Section de text de titre comme h2,h3,h4 etc. 
+  La plupart, j'ai utilisé transform:translate() pour les positionner 
+  où ils sont supposé être selon le design dans figma*/
+  .text1 {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    text-align: justify;
+    transform: translate(-15%, -1970%);
+  }
+
+  .title1 {
+    transform: translate(-13%, -3070%);
+  }
+
+  .title2 {
+    transform: translate(-13%, -3670%);
+  }
+
+  .title3 {
+    transform: translate(-13%, -6200%);
+  }
+
+  .title4 {
+    transform: translate(-12.5%, -3600%);
+  }
+
+  .title5 {
+    transform: translate(-12.5%, -6100%);
+  }
+
+  .title6 {
+    transform: translate(-12.5%, -4310%);
+  }
+
+  .title7 {
+    transform: translate(-12.5%, -7240%);
+  }
+
+  .nom4 {
+    transform: translate(-13%, -7600%);
+  }
+
+  .nom5 {
+    transform: translate(-12.5%, -7500%);
+  }
+
+  .nom6 {
+    transform: translate(-12.5%, -4450%);
+  }
+
+  .text2 {
+    font-size: 1rem;
+    line-height: 1.8;
+    padding-right: 100px;
+    margin-bottom: 40px;
+    text-align: justify;
+    transform: translate(-15.5%, -1200%);
+  }
+
+  .text3 {
+    font-size: 1rem;
+    line-height: 1.8;
+    padding-right: 130px;
+    margin-bottom: 40px;
+    text-align: justify;
+    transform: translate(-15%, -1190%);
+
+  }
+
+  .text4 {
+    font-size: 1rem;
+    line-height: 1.8;
+    padding-right: 130px;
+    margin-bottom: 40px;
+    text-align: justify;
+    transform: translate(-15%, -1410%);
+
+  }
+
+  /* Section de positionnement d'images. J'ai utilisé transform:translate() pour les positionner*/
+  .image {
+    transform: translate(67%, -400%);
+  }
+
+  .image2 {
+    transform: translate(68%, -660%);
+
+  }
+
+  .image3 {
+    transform: translate(69.7%, -680%);
+  }
+
+  .Lcircle {
+    /* Positionnement initial*/
+    transform: translate(80%, 10%);
+
+    animation: slide-left-circle 3s ease-in-out infinite;
+    /* "paramètre" de l'animation*/
+
+  }
+
+  .Rcircle {
+    /* Positionnement initial*/
+    transform: translate(850%, 10%);
+    transform: translate(850%, -25%);
+    animation: slide-right-circle 3s ease-in-out infinite;
+    /* "paramètre" de l'animation*/
+  }
+
+  /* L'animation de l'image de cercle gauche*/
+  @keyframes slide-left-circle {
+
+    0%,
+    100% {
+      transform: translate(80%, -25%);
+    }
+
+    50% {
+      transform: translate(60%, -25%);
+    }
+  }
+
+  /* L'animation de l'image de cercle droite*/
+  @keyframes slide-right-circle {
+
+    0%,
+    100% {
+      transform: translate(850%, -25%);
+    }
+
+    50% {
+      transform: translate(880%, -25%);
+    }
+  }
+
+  /* Style que j'ai donné a mes nav links*/
+  .nav-links {
+    flex-direction: row;
+    /* Pour que le positionnement soit en row*/
+    position: absolute;
+    top: 70px;
+    right: 40px;
+    transform: translate(-440%);
+    /* Positionnement*/
+    width: 250px;
+    /* Définit la largeur*/
+    padding: 10px 0;
+    gap: 50px;
+    z-index: 1000;
+  }
+
+  video {
+    width: 800px;
+    /* Largeur du vidéo*/
+    transform: translate(60%);
+    /* Positionnement initial*/
+  }
+
+  /* styles des bouttons*/
+  .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    z-index: 9999;
+    transform: translate(-43%, -1900%);
+  }
+
+  /* styles des buttons lorsqu'on survole*/
+  .buttons a:hover {
+    background-color: white;
+    color: #333;
+  }
+
+  /* styles des a bouttons*/
+  .buttons a {
+    text-decoration: none;
+    color: var(--white);
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    max-width: 300px;
+    width: 90%;
+  }
+
+  /* styles des a bouttons*/
+  .buttons2 a {
+    text-decoration: none;
+    color: var(--white);
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    max-width: 300px;
+    width: 90%;
+    transform: translate(-32.5%, -2300%);
+  }
+
+  /* styles des buttons lorsqu'on survole*/
+  .buttons2 a:hover {
+    background-color: white;
+    color: #333;
+  }
+
+  .buttons3 a {
+    text-decoration: none;
+    color: var(--white);
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    max-width: 300px;
+    width: 90%;
+    transform: translate(-32.5%, -2300%);
+  }
+
+  /* styles des buttons lorsqu'on survole*/
+  .buttons3 a:hover {
+    background-color: white;
+    color: #333;
+  }
+
+  .buttons4 a {
+    text-decoration: none;
+    color: var(--white);
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    max-width: 300px;
+    width: 90%;
+    transform: translate(-32.5%, -2700%);
+  }
+
+  /* styles des buttons lorsqu'on survole*/
+  .buttons4 a:hover {
+    background-color: white;
+    color: #333;
+  }
+
+  /* styles des navlinks */
+  .nav-links a {
+    text-decoration: none;
+    color: var(--white);
+    padding: 10px 15px;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* styles des navlinks lorsqu'on survole*/
+  .nav-links a:hover {
+    background-color: white;
+    color: #333;
+  }
+
+  /* styles que j'ai donné a mon footer. J'ai mis un display flex , justify-content et un align-items pour que les éléments dans mon footer soit placés en colonne et bien centré*/
+
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--gris-foncer);
+    /* Couleur utilisant la variable que j'ai définis au début de mon code*/
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transform: translate(0%, 750%);
+    /* Pour le positionnement*/
+
+  }
+
+  /* styles du container j'ai mis dans mon footer*/
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* styles de l'address et contact*/
+  .footer-address,
+  .footer-contact {
+    text-align: center;
+  }
+
+  /* styles sur info*/
+  .footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  /* Pour le link*/
+  .footer-socials a {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  /* Ici en utilisant width et height, j'ai définis la taille des icons dans le footer*/
+  .footer-socials img {
+    width: 24px;
+    height: 24px;
+  }
+}
